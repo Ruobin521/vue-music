@@ -12,7 +12,7 @@
             "repo": "git@github.com:Ruobin521/vue-music.git",
             "path": "/www/vue-music/production",
             "ssh_options": "StrictHostKeyChecking=no",
-            "post-deploy": "cd ../client;npm install;",
+            "post-deploy": "cd client;npm install;",
             "env": {
                 "NODE_ENV": "production"
             }

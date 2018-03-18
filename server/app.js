@@ -107,3 +107,7 @@
     app.listen(40001, '127.0.0.1', () => {
         console.log('Vue-Music Server Start')
     })
+
+    process.on('uncaughtException', (err) => {
+        fs.writeSync(1, `捕获到异常：${err}\n`);
+    });

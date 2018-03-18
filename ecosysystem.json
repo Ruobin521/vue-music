@@ -1,0 +1,20 @@
+{
+    "apps": [{
+        "name": "vue-music",
+        "script": "./server/app.js"
+    }],
+    "deploy": {
+        "production": {
+            "user": "dang",
+            "host": ["39.106.124.95"],
+            "port": "40000",
+            "ref": "origin/master",
+            "repo": "git@github.com:Ruobin521/vue-music.git",
+            "path": "/www/vue-music/production",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}

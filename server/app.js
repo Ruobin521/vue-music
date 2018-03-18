@@ -104,6 +104,6 @@
         })
     })
 
-    app.listen(8081, '127.0.0.1', () => {
+    app.listen(40001, '127.0.0.1', () => {
         console.log('Vue-Music Server Start')
     })

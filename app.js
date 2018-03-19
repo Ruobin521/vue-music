@@ -27,7 +27,7 @@
     app.post('/getVkey', function(req, res) {
         if (req.body) {
             // 能正确解析 json 格式的post参数
-            getVkey(res, req.body.data)
+            getVkey(res, req.body.data ? req.body.data : req.body)
         } else {
             // 不能正确解析json 格式的post参数
             let body = ''
@@ -51,6 +51,7 @@
         var url = `https://u.y.qq.com/cgi-bin/musicu.fcg?_=${+ new Date()}`
             // var url = 'http://ustbhuangyi.com/music/api/getPurlUrl'
         axios.post(url, data, {}).then((response) => {
+            console.log(response.data);
             res.json(response.data)
         }).catch((e) => {
             console.log(e)

@@ -10,6 +10,10 @@
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(express.static('dist'));
 
+    function getGuid() {
+        return new Date().getTime()
+    }
+
     app.get('/getDiscList', function(req, res) {
         var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
         axios.get(url, {

@@ -103,6 +103,10 @@
         })
     })
 
+    app.get('*', function(req, res) {
+        res.sendFile('./dist/index.html')
+    });
+
     app.listen(40001, '127.0.0.1', () => {
         console.log('Vue-Music Server Start')
     })

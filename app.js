@@ -9,11 +9,6 @@
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(express.static('dist'));
-
-    function getGuid() {
-        return new Date().getTime()
-    }
-
     app.get('/getDiscList', function(req, res) {
         var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
         axios.get(url, {
@@ -53,7 +48,7 @@
     })
 
     function getVkey(res, data) {
-        var url = `https://u.y.qq.com/cgi-bin/musicu.fcg?_=${getGuid()}`
+        var url = `https://u.y.qq.com/cgi-bin/musicu.fcg?_=${+ new Date()}`
             // var url = 'http://ustbhuangyi.com/music/api/getPurlUrl'
         axios.post(url, data, {}).then((response) => {
             res.json(response.data)
